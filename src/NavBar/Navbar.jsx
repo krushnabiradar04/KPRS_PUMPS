@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+import { ScrollToTop } from '../ScroolToTop';
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar ">
+    <nav className="navbar navbar-expand-lg custom-navbar sticky-top">
+        <ScrollToTop />
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">KPRS Pumps</NavLink>
         <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -48,6 +50,9 @@ export const Navbar = () => {
                 <li><NavLink to="/products/dewateringpumps" className="dropdown-item">Dewatering Pumps</NavLink></li>
                 <li><NavLink to="/products/nonclogpumps" className="dropdown-item">Non-Clog Pumps</NavLink></li>
                 <li><NavLink to="/products/sewagepumps" className="dropdown-item">Sewage Pumps</NavLink></li>
+                <li><NavLink to="/products/dewateringsystem" className="dropdown-item">Dewatering Pumps</NavLink></li>
+                <li><NavLink to="/products/submersibledewatering" className="dropdown-item">Submersible Dewatering Pumps</NavLink></li>
+                <li><NavLink to="/products/slurrypumps" className="dropdown-item">Slurry Pumps</NavLink></li>
               </ul>
             </li>
 

@@ -1,0 +1,109 @@
+.about-container {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #2c3e50;
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 12px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.about-container h2 {
+  font-size: 2rem;
+  color: #1a237e;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.about-container p {
+  margin-bottom: 1rem;
+  text-align: justify;
+  animation: fadeIn 1.3s ease-in-out;
+}
+
+.pledge-section {
+  margin-top: 30px;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.pledge-section h4 {
+  font-size: 1.3rem;
+  color: #2e7d32;
+  margin-bottom: 0.8rem;
+}
+
+.pledge-section ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: #444;
+}
+
+.pledge-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.aboutus-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: zoomIn 1.4s ease-in-out;
+}
+
+.aboutus-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive image styles */
+@media (max-width: 768px) {
+  .aboutus-image {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .aboutus-image {
+    max-width: 600px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

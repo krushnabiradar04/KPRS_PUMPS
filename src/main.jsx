@@ -15,6 +15,9 @@ import { DewatringPumps } from './Components/Products/DewatringPumps'
 import { NonClogPumps } from './Components/Products/NonClogPumps'
 import { SewagePumps } from './Components/Products/SewagePumps'
 import './index.css'
+import { DewateringSystems } from './Components/Products/DewateringSystems'
+import { SubmersibleDewateringPumps } from './Components/Products/SubmersibleDewateringPumps'
+import { SlurryPumps } from './Components/Products/SlurryPumps'
 
 
 const router=createBrowserRouter([
@@ -40,6 +43,9 @@ const router=createBrowserRouter([
         {path:"dewateringpumps",element:<DewatringPumps />},
         {path:"nonclogpumps",element:<NonClogPumps />},
         {path:"sewagepumps",element:<SewagePumps />},
+        {path:"dewateringsystem",element:<DewateringSystems />},
+        {path:"submersibledewatering",element:<SubmersibleDewateringPumps />},
+        {path:"slurrypumps",element:<SlurryPumps />},
       ]
     }
   ]
