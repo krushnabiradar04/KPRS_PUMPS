@@ -11,11 +11,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.7",
-<<<<<<< HEAD
     "bootstrap-icons": "^1.13.1",
-=======
-    "framer-motion": "^12.23.12",
->>>>>>> c9643b00126925b11704cdb68d0af82eb3469bf2
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.1"
