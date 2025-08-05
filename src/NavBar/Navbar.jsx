@@ -1,9 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import { NavLink, useLocation } from "react-router-dom";
+import "./Navbar.css"
 import { ScrollToTop } from "../ScroolToTop";
 
 export const Navbar = () => {
+  const location = useLocation();
+
+  const handleNavClick = () => {
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+      new window.bootstrap.Collapse(navbarCollapse).hide();
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg custom-navbar sticky-top">
       <ScrollToTop />
@@ -12,7 +21,7 @@ export const Navbar = () => {
           KPRS Pumps
         </NavLink>
         <button
-          className="navbar-toggler "
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -20,7 +29,7 @@ export const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon "></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -29,8 +38,9 @@ export const Navbar = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `nav-link ${isActive ? "text-warning" : "text-whiite"}`
+                  `nav-link ${isActive ? "text-warning" : "text-white"}`
                 }
+                onClick={handleNavClick}
               >
                 Home
               </NavLink>
@@ -40,9 +50,7 @@ export const Navbar = () => {
               <NavLink
                 to="/facilities"
                 className={({ isActive }) =>
-                  `nav-link dropdown-toggle ${
-                    isActive ? "text-warning" : "text-white"
-                  }`
+                  `nav-link dropdown-toggle ${isActive ? "text-warning" : "text-white"}`
                 }
                 role="button"
                 data-bs-toggle="dropdown"
@@ -50,11 +58,15 @@ export const Navbar = () => {
               >
                 Facilities
               </NavLink>
-              <ul className="dropdown-menu">
+              <ul
+                className="dropdown-menu"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <li>
                   <NavLink
                     to="/facilities/installation"
                     className="dropdown-item"
+                    onClick={handleNavClick}
                   >
                     Installation
                   </NavLink>
@@ -63,6 +75,7 @@ export const Navbar = () => {
                   <NavLink
                     to="/facilities/transportation"
                     className="dropdown-item"
+                    onClick={handleNavClick}
                   >
                     Transportation
                   </NavLink>
@@ -74,9 +87,7 @@ export const Navbar = () => {
               <NavLink
                 to="/products"
                 className={({ isActive }) =>
-                  `nav-link dropdown-toggle ${
-                    isActive ? "text-warning" : "text-white"
-                  }`
+                  `nav-link dropdown-toggle ${isActive ? "text-warning" : "text-white"}`
                 }
                 role="button"
                 data-bs-toggle="dropdown"
@@ -84,11 +95,15 @@ export const Navbar = () => {
               >
                 Products
               </NavLink>
-              <ul className="dropdown-menu">
+              <ul
+                className="dropdown-menu"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <li>
                   <NavLink
                     to="/products/dewateringpumps"
                     className="dropdown-item"
+                    onClick={handleNavClick}
                   >
                     Dewatering Pumps
                   </NavLink>
@@ -97,12 +112,17 @@ export const Navbar = () => {
                   <NavLink
                     to="/products/nonclogpumps"
                     className="dropdown-item"
+                    onClick={handleNavClick}
                   >
                     Non-Clog Pumps
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/products/sewagepumps" className="dropdown-item">
+                  <NavLink
+                    to="/products/sewagepumps"
+                    className="dropdown-item"
+                    onClick={handleNavClick}
+                  >
                     Sewage Pumps
                   </NavLink>
                 </li>
@@ -110,6 +130,7 @@ export const Navbar = () => {
                   <NavLink
                     to="/products/dewateringsystem"
                     className="dropdown-item"
+                    onClick={handleNavClick}
                   >
                     Dewatering Systems
                   </NavLink>
@@ -118,12 +139,17 @@ export const Navbar = () => {
                   <NavLink
                     to="/products/submersibledewatering"
                     className="dropdown-item"
+                    onClick={handleNavClick}
                   >
                     Submersible Dewatering Pumps
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/products/slurrypumps" className="dropdown-item">
+                  <NavLink
+                    to="/products/slurrypumps"
+                    className="dropdown-item"
+                    onClick={handleNavClick}
+                  >
                     Slurry Pumps
                   </NavLink>
                 </li>
@@ -134,10 +160,9 @@ export const Navbar = () => {
               <NavLink
                 to="/infrastructure"
                 className={({ isActive }) =>
-                  `nav-link ${
-                    isActive ? "text-warning" : "text-white"
-                  }`
+                  `nav-link ${isActive ? "text-warning" : "text-white"}`
                 }
+                onClick={handleNavClick}
               >
                 Infrastructure
               </NavLink>
@@ -146,10 +171,9 @@ export const Navbar = () => {
               <NavLink
                 to="/client"
                 className={({ isActive }) =>
-                  `nav-link ${
-                    isActive ? "text-warning" : "text-white"
-                  }`
+                  `nav-link ${isActive ? "text-warning" : "text-white"}`
                 }
+                onClick={handleNavClick}
               >
                 Clients
               </NavLink>
@@ -158,10 +182,9 @@ export const Navbar = () => {
               <NavLink
                 to="/enquiry"
                 className={({ isActive }) =>
-                  `nav-link  ${
-                    isActive ? "text-warning" : "text-white"
-                  }`
+                  `nav-link ${isActive ? "text-warning" : "text-white"}`
                 }
+                onClick={handleNavClick}
               >
                 Enquiry
               </NavLink>
@@ -170,10 +193,9 @@ export const Navbar = () => {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  `nav-link ${
-                    isActive ? "text-warning" : "text-white"
-                  }`
+                  `nav-link ${isActive ? "text-warning" : "text-white"}`
                 }
+                onClick={handleNavClick}
               >
                 About Us
               </NavLink>
@@ -182,10 +204,9 @@ export const Navbar = () => {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  `nav-link ${
-                    isActive ? "text-warning" : "text-white"
-                  }`
+                  `nav-link ${isActive ? "text-warning" : "text-white"}`
                 }
+                onClick={handleNavClick}
               >
                 Contact Us
               </NavLink>
