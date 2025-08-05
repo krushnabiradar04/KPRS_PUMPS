@@ -1,10 +1,11 @@
 .slider-container {
   width: 100%;
-  height: 70vh;
+  height: 90vh;
   max-height: 720px;
   overflow: hidden;
   position: relative;
   border-radius: 12px;
+  padding-bottom: 40px;
 }
 
 .slider-image {
@@ -40,3 +41,4 @@
     height: 35vh;
   }
 }
+

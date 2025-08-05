@@ -31,7 +31,7 @@ export const Slider = () => {
 
   return (
     <div className="slider-container">
-      <div className="product-name"><h2>{productNames[current]}</h2></div>
+      <div className="product-name"><h2 className="H2OFSlider text-center fw-bold text-primary text-uppercase">{productNames[current]}</h2></div>
       <AnimatePresence>
         <motion.img
           key={current}
