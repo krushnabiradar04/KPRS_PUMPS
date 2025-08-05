@@ -18,6 +18,7 @@ import './index.css'
 import { DewateringSystems } from './Components/Products/DewateringSystems'
 import { SubmersibleDewateringPumps } from './Components/Products/SubmersibleDewateringPumps'
 import { SlurryPumps } from './Components/Products/SlurryPumps'
+import {Clients} from './Components/Clients/Clients'
 
 
 const router=createBrowserRouter([
@@ -30,6 +31,7 @@ const router=createBrowserRouter([
     {path:"contact" , element:<ContactUS />},
     {path:"infrastructure" , element:<Infrastructure />},
     {path:"enquiry" , element:<Enquiry />},
+    {path:"client" , element:<Clients />},
     {path:"facilities",
       element:<Facilities />,
       children:[

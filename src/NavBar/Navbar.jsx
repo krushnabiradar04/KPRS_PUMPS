@@ -60,6 +60,9 @@ export const Navbar = () => {
               <NavLink to="/infrastructure" className="nav-link">Infrastructure</NavLink>
             </li>
             <li className="nav-item">
+              <NavLink to="/client" className="nav-link">Client</NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink to="/enquiry" className="nav-link">Enquiry</NavLink>
             </li>
             <li className="nav-item">

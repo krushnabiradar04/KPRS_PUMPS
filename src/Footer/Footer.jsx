@@ -10,7 +10,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-md-4">
-            <h5 className="text-uppercase fw-bold mb-3">Quick Links</h5>
+            <h5 className="text-uppercase fw-bold ">Quick Links</h5>
             <ul className="list-unstyled">
               {['Home', 'About Us', 'Clients', 'Enquiry', 'Contact Us', 'Photo Gallery', 'Download Catlog', 'Sitemap'].map((item, idx) => (
                 <li key={idx}>

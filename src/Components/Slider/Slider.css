@@ -17,6 +17,11 @@
   border-radius: 12px;
 }
 
+.product-name{
+  text-align: center;
+}
+
+
 /* Responsive Tweaks */
 @media (max-width: 1024px) {
   .slider-container {
