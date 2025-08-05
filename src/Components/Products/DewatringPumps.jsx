@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const DewatringPumps = () => {
   const pdfLinks = [
@@ -34,9 +35,9 @@ export const DewatringPumps = () => {
             they are fitted with stainless steel hardened impellers and field adjustable nitrile rubber diffuser.
             These tough pumps do not have to be totally submerged and will operate under snore conditions if necessary.
           </p>
-          <a href="#" className="text-primary fw-semibold text-decoration-none">
+          <Link to="/enquiry" className="text-primary fw-semibold text-decoration-none">
             REQUEST A QUOTE
-          </a>
+          </Link>
         </div>
         <div className="col-md-6 text-center">
           <motion.img
@@ -73,9 +74,9 @@ export const DewatringPumps = () => {
             They are produced in stainless steel 410 grade and machined to exacting specifications.
             Hardness reduces wear for continued high performance.
           </p>
-          <a href="#" className="text-primary fw-semibold text-decoration-none">
+          <Link to="/enquiry" className="text-primary fw-semibold text-decoration-none">
             REQUEST A QUOTE
-          </a>
+          </Link>
         </div>
       </motion.div>
 
@@ -194,8 +195,7 @@ export const DewatringPumps = () => {
 
         {/* Pump Cards */}
         <div className="row">
-          {[
-            {
+          {[{
               hp: 5,
               model: 'AK-5350-2P',
               head: '22 Mtr.',
