@@ -1,6 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Footer.css';
-
 
 export const Footer = () => {
   return (
@@ -10,13 +10,16 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-md-4">
-            <h5 className="text-uppercase fw-bold ">Quick Links</h5>
+            <h5 className="text-uppercase fw-bold">Quick Links</h5>
             <ul className="list-unstyled">
-              {['Home', 'About Us', 'Clients', 'Enquiry', 'Contact Us', 'Photo Gallery', 'Download Catlog', 'Sitemap'].map((item, idx) => (
-                <li key={idx}>
-                  <a href="#" className="footer-link d-block py-1">{item}</a>
-                </li>
-              ))}
+              <li><NavLink to="/" className="footer-link d-block py-1">Home</NavLink></li>
+              <li><NavLink to="/about" className="footer-link d-block py-1">About Us</NavLink></li>
+              <li><NavLink to="/client" className="footer-link d-block py-1">Clients</NavLink></li>
+              <li><NavLink to="/enquiry" className="footer-link d-block py-1">Enquiry</NavLink></li>
+              <li><NavLink to="/contact" className="footer-link d-block py-1">Contact Us</NavLink></li>
+              <li><NavLink to="/gallery" className="footer-link d-block py-1">Photo Gallery</NavLink></li>
+              <li><NavLink to="/catalog" className="footer-link d-block py-1">Download Catlog</NavLink></li>
+              <li><NavLink to="/sitemap" className="footer-link d-block py-1">Sitemap</NavLink></li>
             </ul>
           </div>
 
@@ -24,18 +27,12 @@ export const Footer = () => {
           <div className="col-md-4">
             <h5 className="text-uppercase fw-bold mb-3">Products</h5>
             <ul className="list-unstyled">
-              {[
-                'Dewatering Pumps',
-                'Sewage Pumps',
-                'Nonclog Pumps',
-                'Dewatering Systems',
-                'Submersible Dewatering Pumps',
-                'Slurry Pumps',
-              ].map((item, idx) => (
-                <li key={idx}>
-                  <a href="#" className="footer-link d-block py-1">{item}</a>
-                </li>
-              ))}
+              <li><NavLink to="/products/dewateringpumps" className="footer-link d-block py-1">Dewatering Pumps</NavLink></li>
+              <li><NavLink to="/products/sewagepumps" className="footer-link d-block py-1">Sewage Pumps</NavLink></li>
+              <li><NavLink to="/products/nonclogpumps" className="footer-link d-block py-1">Nonclog Pumps</NavLink></li>
+              <li><NavLink to="/products/dewateringsystem" className="footer-link d-block py-1">Dewatering Systems</NavLink></li>
+              <li><NavLink to="/products/submersibledewatering" className="footer-link d-block py-1">Submersible Dewatering Pumps</NavLink></li>
+              <li><NavLink to="/products/slurrypumps" className="footer-link d-block py-1">Slurry Pumps</NavLink></li>
             </ul>
           </div>
 
@@ -52,11 +49,11 @@ export const Footer = () => {
             <p className="mb-1"><strong>Sales:</strong> +91-96237 72704</p>
             <p className="mb-1">
               <strong>Email:</strong>{' '}
-              <a href="mailto:ashwin@kprspumps.com" className="text-info">ashwin@kprspumps.com</a>
+              <a href="mailto:ashwin@kprspumps.com" className="text-white">ashwin@kprspumps.com</a>
             </p>
             <p className="mb-1">
               <strong>Also visit at:</strong>{' '}
-              <a href="http://www.dewateringpumpsindia.net" className="text-info" target="_blank" rel="noopener noreferrer">
+              <a href="http://www.dewateringpumpsindia.net" className="text-white" target="_blank" rel="noopener noreferrer">
                 www.dewateringpumpsindia.net
               </a>
             </p>
@@ -79,7 +76,7 @@ export const Footer = () => {
           transition: color 0.3s ease;
         }
         .footer-link:hover {
-          color: #0dcaf0; /* Bootstrap info */
+          color: #0dcaf0;
           text-decoration: underline;
         }
       `}</style>

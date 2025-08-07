@@ -1,15 +1,30 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ScrollToTop } from "../ScroolToTop";
 import './NavBar.css'
 
 export const Navbar = () => {
-  const location = useLocation();
-
-  const handleNavClick = () => {
+  const handleNavClick = (e) => {
+    e.stopPropagation();
+    
+    // Close navbar collapse on mobile
     const navbarCollapse = document.querySelector(".navbar-collapse");
-    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-      new window.bootstrap.Collapse(navbarCollapse).hide();
+    const collapseInstance = window.bootstrap.Collapse.getInstance(navbarCollapse);
+    
+    if (collapseInstance && navbarCollapse.classList.contains("show")) {
+      collapseInstance.hide();
+    }
+    
+    // Close the parent dropdown menu
+    const dropdownMenu = e.target.closest(".dropdown-menu");
+    if (dropdownMenu) {
+      const dropdownToggle = dropdownMenu.previousElementSibling;
+      if (dropdownToggle && dropdownToggle.classList.contains("dropdown-toggle")) {
+        const dropdownInstance = window.bootstrap.Dropdown.getInstance(dropdownToggle);
+        if (dropdownInstance) {
+          dropdownInstance.hide();
+        }
+      }
     }
   };
 
@@ -17,7 +32,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg custom-navbar sticky-top">
       <ScrollToTop />
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to="/" onClick={handleNavClick}>
           KPRS Pumps
         </NavLink>
         <button
@@ -29,7 +44,7 @@ export const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon "></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -58,10 +73,7 @@ export const Navbar = () => {
               >
                 Facilities
               </NavLink>
-              <ul
-                className="dropdown-menu"
-                onClick={(e) => e.stopPropagation()}
-              >
+              <ul className="dropdown-menu">
                 <li>
                   <NavLink
                     to="/facilities/installation"
@@ -95,10 +107,7 @@ export const Navbar = () => {
               >
                 Products
               </NavLink>
-              <ul
-                className="dropdown-menu"
-                onClick={(e) => e.stopPropagation()}
-              >
+              <ul className="dropdown-menu">
                 <li>
                   <NavLink
                     to="/products/dewateringpumps"
