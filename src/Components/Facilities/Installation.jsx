@@ -31,7 +31,7 @@ export const Installation = () => {
           transition={{ duration: 0.3 }}
         >
           <img
-            src="../src/Assets/facility.png"
+            src="../src/assets/facility.png"
             alt="Installation"
             className="img-fluid rounded shadow"
           />

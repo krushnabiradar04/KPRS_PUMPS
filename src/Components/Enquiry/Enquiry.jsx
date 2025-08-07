@@ -21,9 +21,6 @@ export const Enquiry = () => {
     e.preventDefault();
     alert('Form submitted successfully!');
     console.log(formData);
-  };
-
-  const handleReset = () => {
     setFormData({
       companyName: '',
       contactPerson: '',
@@ -34,6 +31,8 @@ export const Enquiry = () => {
       requirements: '',
     });
   };
+
+ 
 
   return (
     <div className="container mt-5 mb-5">
@@ -100,7 +99,6 @@ export const Enquiry = () => {
 
             <div className="text-center">
               <button type="submit" className="btn btn-success px-4 me-2">Submit</button>
-              <button type="button" className="btn btn-secondary px-4" onClick={handleReset}>Reset</button>
             </div>
           </form>
         </div>
