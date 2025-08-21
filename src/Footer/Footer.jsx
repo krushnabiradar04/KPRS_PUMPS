@@ -62,7 +62,7 @@ export const Footer = () => {
         
         <div className="text-center pt-4 mt-4 border-top border-secondary small">
           <span className="text-white">
-            Designed by : Exads IT Solutions Pvt. Ltd. | ©️2025 KPRS PUMPS. All rights reserved.
+            Developed by : Exads IT Solutions Pvt. Ltd. | ©️2025 KPRS PUMPS. All rights reserved.
           </span>
         </div>
       </div>
