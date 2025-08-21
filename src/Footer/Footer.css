@@ -1,3 +1,13 @@
 .footer_bg{
     background-color: #002B5B !important;
 }
+
+.footer-link {
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+          color: #0dcaf0;
+          text-decoration: underline;
+        }

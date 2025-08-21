@@ -59,8 +59,7 @@ export const Footer = () => {
             </p>
           </div>
         </div>
-
-        {/* Footer bottom */}
+        
         <div className="text-center pt-4 mt-4 border-top border-secondary small">
           <span className="text-white">
             Designed by : Exads IT Solutions Pvt. Ltd. | ©️2025 KPRS PUMPS. All rights reserved.
@@ -68,18 +67,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Inline CSS for hover effect */}
-      <style jsx>{`
-        .footer-link {
-          color: white;
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-        .footer-link:hover {
-          color: #0dcaf0;
-          text-decoration: underline;
-        }
-      `}</style>
+      
     </footer>
   );
 };
