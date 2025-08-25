@@ -19,6 +19,7 @@ import { DewateringSystems } from './Components/Products/DewateringSystems'
 import { SubmersibleDewateringPumps } from './Components/Products/SubmersibleDewateringPumps'
 import { SlurryPumps } from './Components/Products/SlurryPumps'
 import {Clients} from './Components/Clients/Clients'
+import { NotFound } from './Components/NotFound/NotFound'
 
 
 const router=createBrowserRouter([
@@ -32,6 +33,7 @@ const router=createBrowserRouter([
     {path:"infrastructure" , element:<Infrastructure />},
     {path:"enquiry" , element:<Enquiry />},
     {path:"client" , element:<Clients />},
+    {path:"notfound",element: <NotFound />},
     {path:"facilities",
       element:<Facilities />,
       children:[
@@ -48,6 +50,7 @@ const router=createBrowserRouter([
         {path:"dewateringsystem",element:<DewateringSystems />},
         {path:"submersibledewatering",element:<SubmersibleDewateringPumps />},
         {path:"slurrypumps",element:<SlurryPumps />},
+        
       ]
     }
   ]

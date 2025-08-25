@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { ScrollToTop } from "../ScroolToTop";
 import './NavBar.css'
+import kprs_logo from "../../src/assets/kprs_logo.png"
 
 export const Navbar = () => {
   const handleNavClick = (e) => {
@@ -32,9 +33,12 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg custom-navbar sticky-top">
       <ScrollToTop />
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/" onClick={handleNavClick}>
+        <div className="div d-flex justify-content-center align-items-center">
+          <img src={kprs_logo} alt="KPRS_LOGO" style={{maxWidth:"100px"}}/>
+          <NavLink className="navbar-brand" to="/" onClick={handleNavClick}>
           KPRS Pumps
         </NavLink>
+        </div>
         <button
           className="navbar-toggler"
           type="button"
