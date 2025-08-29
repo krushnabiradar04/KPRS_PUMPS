@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './Footer.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Footer.css";
 
 export const Footer = () => {
   return (
@@ -48,26 +48,45 @@ export const Footer = () => {
             <p className="mb-1"><strong>Mobile No.:</strong> +91-95520 06841</p>
             <p className="mb-1"><strong>Sales:</strong> +91-96237 72704</p>
             <p className="mb-1">
-              <strong>Email:</strong>{' '}
-              <a href="mailto:ashwin@kprspumps.com" className="text-white">ashwin@kprspumps.com</a>
+              <strong>Email:</strong>{" "}
+              <a href="mailto:ashwin@kprspumps.com" className="text-info">
+                ashwin@kprspumps.com
+              </a>
             </p>
             <p className="mb-1">
-              <strong>Also visit at:</strong>{' '}
-              <a href="http://www.dewateringpumpsindia.net" className="text-white" target="_blank" rel="noopener noreferrer">
+              <strong>Also visit at:</strong>{" "}
+              <a
+                href="http://www.dewateringpumpsindia.net"
+                className="text-info"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 www.dewateringpumpsindia.net
               </a>
             </p>
           </div>
         </div>
-        
+
+        {/* Footer bottom */}
         <div className="text-center pt-4 mt-4 border-top border-secondary small">
           <span className="text-white">
-            Developed by : Exads IT Solutions Pvt. Ltd. | ©️2025 KPRS PUMPS. All rights reserved.
+            Dveloped by : Exads IT Solutions Pvt. Ltd. | ©️2025 KPRS PUMPS. All rights reserved.
           </span>
         </div>
       </div>
 
-      
+      {/* Inline CSS for hover effect */}
+      <style jsx>{`
+        .footer-link {
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+          color: #0dcaf0; /* Bootstrap info color */
+          text-decoration: underline;
+        }
+      `}</style>
     </footer>
   );
 };

@@ -1,6 +1,9 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
 
-import { motion } from 'framer-motion';
+// ✅ Import assets so Vite includes them in build
+import facilityImg from "../../assets/facility.png";
+import installationVideo from "../../assets/installation.mp4";
 
 export const Installation = () => {
   return (
@@ -17,9 +20,10 @@ export const Installation = () => {
           transition={{ duration: 0.3 }}
         >
           <p className="fs-5 lh-lg text-secondary">
-            <strong className="text-dark">KPR’S PUMP</strong> is providing the facility of installation on
-            customer’s sites, if and only customer demanding for installation. If place and time
-            is not convenient for KPR’s PUMPS then it is not possible to provide this facility to
+            <strong className="text-dark">KPR’S PUMP</strong> is providing the
+            facility of installation on customer’s sites, if and only customer
+            demanding for installation. If place and time is not convenient for
+            KPR’s PUMPS then it is not possible to provide this facility to
             customer. Charges are applicable for installation and service.
           </p>
         </motion.div>
@@ -31,7 +35,7 @@ export const Installation = () => {
           transition={{ duration: 0.3 }}
         >
           <img
-            src="../src/assets/facility.png"
+            src={facilityImg}
             alt="Installation"
             className="img-fluid rounded shadow"
           />
@@ -40,14 +44,14 @@ export const Installation = () => {
 
       {/* Video Row */}
       <motion.div
-        className="row mt-5 justify-content-center mt-5"
+        className="row mt-5 justify-content-center"
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
       >
         <div className="col-lg-10">
           <div className="ratio ratio-16x9 shadow rounded">
             <video className="w-100" controls>
-              <source src="../src/assets/installation.mp4" type="video/mp4" />
+              <source src={installationVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
