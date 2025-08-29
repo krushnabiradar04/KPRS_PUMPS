@@ -1,122 +1,182 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Slider } from '../Slider/Slider'
-import { AboutUsSummary } from '../AboutUs/AboutUsSummry'
-import { ContactUsSummary } from '../ContactUS/ContactUsSummry'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Slider } from "../Slider/Slider";
+import { AboutUsSummary } from "../AboutUs/AboutUsSummry";
+import { ContactUsSummary } from "../ContactUS/ContactUsSummry";
+import { motion } from "framer-motion";
 
 export const Home = () => {
+  const [hovered, setHovered] = useState(null);
+
+  const cards = [
+    {
+      id: 1,
+      icon: "⚙️",
+      title: "OUR PRODUCTS",
+      text: (
+        <>
+          <Link to="/products/dewateringpumps" className="text-grey">Dewatering Pumps</Link>,{" "}
+          <Link to="/products/sewagepumps" className="text-primary">Sewage Pumps</Link>,{" "}
+          <Link to="/products/nonclogpumps" className="text-primary">Non Clog Pumps</Link>,{" "}
+          <Link to="/products/dewateringsystem" className="text-primary">Dewatering Systems</Link>,{" "}
+          <Link to="/products/submersibledewatering" className="text-primary">Submersible Dewatering Pumps</Link> and{" "}
+          <Link to="/products/slurrypumps" className="text-primary">Slurry Pumps</Link>
+        </>
+      ),
+      link: <Link to="/enquiry" className="fw-bold text-uppercase">Request a Quote</Link>,
+    },
+    {
+      id: 2,
+      icon: "🏬",
+      title: "ABOUT COMPANY",
+      text: (
+        <>
+          The company has branch offices in Delhi (India) and Dubai & Bahrain.  
+          At present, the company exports 60% of its products to G.C.C. countries and more.
+        </>
+      ),
+      link: <Link to="/about" className="fw-semibold">Read More</Link>,
+    },
+    {
+      id: 3,
+      icon: "➕",
+      title: "FACILITIES",
+      text: (
+        <>
+          KPR'S Pump provides installation facilities at customer sites,  
+          only if the customer requests installation.
+        </>
+      ),
+      link: (
+        <div className="dropdown">
+          <button
+            className="btn btn-link fw-semibold dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Read More
+          </button>
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li>
+              <Link className="dropdown-item" to="/facilities/installation">
+                Installation
+              </Link>
+            </li>
+            <li>
+              <Link className="dropdown-item" to="/facilities/transportation">
+                Transportation
+              </Link>
+            </li>
+          </ul>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <>
       <Slider />
 
-      {/* Info Section */}
+      {/* Info Section with Animated Cards */}
       <div className="container my-5">
-        <div className="row text-center mb-5">
-          {/* Our Products */}
-          <div className="col-md-4">
-            <div className="mb-3 fs-1">⚙️</div>
-            <h5 className="fw-bold">OUR PRODUCTS</h5>
-            <p>
-              <Link to="/products/dewateringpumps" className="text-grey">Dewatering Pumps</Link>,{" "}
-              <Link to="/products/sewagepumps" className="text-primary">Sewage Pumps</Link>,{" "}
-              <Link to="/products/nonclogpumps" className="text-primary">Non Clog Pumps</Link>,{" "}
-              <Link to="/products/dewateringsystem" className="text-primary">Dewatering Systems</Link>,{" "}
-              <Link to="/products/submersibledewatering" className="text-primary">Submersible Dewatering Pumps</Link> and{" "}
-              <Link to="/products/slurrypumps" className="text-primary">Slurry Pumps</Link>
-            </p>
-            <Link to="/enquiry" className="fw-bold text-uppercase">Request a Quote</Link>
-          </div>
-
-          {/* About Company */}
-          <div className="col-md-4">
-            <div className="mb-3 fs-1">🏬</div>
-            <h5 className="fw-bold">ABOUT COMPANY</h5>
-            <p className="text-muted">
-              The company has branch offices in Delhi (India) and Dubai & Bahrain.  
-              At present, the company exports 60% of its products to G.C.C. countries and more.
-            </p>
-            <Link to="/about" className="fw-semibold">Read More</Link>
-          </div>
-
-          {/* Facilities with Dropdown */}
-          <div className="col-md-4">
-            <div className="mb-3 fs-1">➕</div>
-            <h5 className="fw-bold">FACILITIES</h5>
-            <p className="text-muted">
-              KPR'S Pump provides installation facilities at customer sites,  
-              only if the customer requests installation.
-            </p>
-
-            <div className="dropdown">
-              <button 
-                className="btn btn-link fw-semibold dropdown-toggle" 
-                type="button" 
-                id="dropdownMenuButton" 
-                data-bs-toggle="dropdown" 
-                aria-expanded="false"
-              >
-                Read More
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li>
-                  <Link className="dropdown-item" to="/facilities/installation">
-                    Installation
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/facilities/transportation">
-                    Transportation
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Application Areas */}
-        <div className="text-center mb-4">
-          <h4 className="fw-bold">Application Areas</h4>
-          <h5 className="text-muted">Dewatering Pumps</h5>
-        </div>
-        
-        <div className="row text-center">
-          {/* Construction Sites */}
-          <div className="col-md-4">
-            <div className="mb-3 fs-1">📄</div>
-            <h6 className="fw-semibold">Construction Sites</h6>
-            <p className="text-muted small">
-              Keep your construction site dry and safe with reliable dewatering pumps,  
-              preventing water-related delays and hazards.
-            </p>
-            <Link to="/applications/construction" className="fw-semibold">Read More</Link>
-          </div>
-
-          {/* Mining Operations */}
-          <div className="col-md-4">
-            <div className="mb-3 fs-1">⛏️</div>
-            <h6 className="fw-semibold">Mining Operations</h6>
-            <p className="text-muted small">
-              Efficiently manage water accumulation in mining excavations and tunnels,  
-              promoting a secure working environment.
-            </p>
-            <Link to="/applications/mining" className="fw-semibold">Read More</Link>
-          </div>
-
-          {/* Disaster Recovery */}
-          <div className="col-md-4">
-            <div className="mb-3 fs-1">🗂️</div>
-            <h6 className="fw-semibold">Disaster Recovery</h6>
-            <p className="text-muted small">
-              In emergencies, our dewatering pumps play a crucial role  
-              in floodwater mitigation and recovery efforts.
-            </p>
-            <Link to="/applications/disaster-recovery" className="fw-semibold">Read More</Link>
-          </div>
+        <div className="row g-4">
+          {cards.map((card, index) => (
+            <motion.div
+              key={card.id}
+              className="col-md-4"
+              onMouseEnter={() => setHovered(card.id)}
+              onMouseLeave={() => setHovered(null)}
+              initial={{ scale: 1, zIndex: 1 }}
+              animate={{
+                scale: hovered === card.id ? 1.08 : 1,
+                zIndex: hovered === card.id ? 10 : 1,
+                opacity: hovered && hovered !== card.id ? 0.6 : 1,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="card shadow-sm h-100 p-4 text-center rounded-3">
+                <div className="mb-3 fs-1">{card.icon}</div>
+                <h5 className="fw-bold">{card.title}</h5>
+                <p className="text-muted">{card.text}</p>
+                {card.link}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
+
+      {/* Application Areas (keep same) */}
+      <div className="text-center mb-4">
+        <h4 className="fw-bold">Application Areas</h4>
+        <h5 className="text-muted">Dewatering Pumps</h5>
+      </div>
+
+      <div className="container">
+  <div className="row text-center g-4">
+    {/* Construction Sites */}
+    <div className="col-md-4">
+      <motion.div
+        className="card shadow-sm h-100 p-3 rounded-3"
+        whileHover={{ scale: 1.05, boxShadow: "0px 10px 25px rgba(0,0,0,0.2)" }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <div className="mb-3 fs-1">📄</div>
+        <h6 className="fw-semibold">Construction Sites</h6>
+        <p className="text-muted small">
+          Keep your construction site dry and safe with reliable dewatering
+          pumps, preventing water-related delays and hazards.
+        </p>
+        <Link to="/applications/construction" className="fw-semibold text-primary">
+          Read More →
+        </Link>
+      </motion.div>
+    </div>
+
+    {/* Mining Operations */}
+    <div className="col-md-4">
+      <motion.div
+        className="card shadow-sm h-100 p-3 rounded-3"
+        whileHover={{ scale: 1.05, boxShadow: "0px 10px 25px rgba(0,0,0,0.2)" }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <div className="mb-3 fs-1">⛏️</div>
+        <h6 className="fw-semibold">Mining Operations</h6>
+        <p className="text-muted small">
+          Efficiently manage water accumulation in mining excavations and
+          tunnels, promoting a secure working environment.
+        </p>
+        <Link to="/applications/mining" className="fw-semibold text-primary">
+          Read More →
+        </Link>
+      </motion.div>
+    </div>
+
+    {/* Disaster Recovery */}
+    <div className="col-md-4">
+      <motion.div
+        className="card shadow-sm h-100 p-3 rounded-3"
+        whileHover={{ scale: 1.05, boxShadow: "0px 10px 25px rgba(0,0,0,0.2)" }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <div className="mb-3 fs-1">🗂️</div>
+        <h6 className="fw-semibold">Disaster Recovery</h6>
+        <p className="text-muted small">
+          In emergencies, our dewatering pumps play a crucial role in floodwater
+          mitigation and recovery efforts.
+        </p>
+        <Link to="/applications/disaster-recovery" className="fw-semibold text-primary">
+          Read More →
+        </Link>
+      </motion.div>
+    </div>
+  </div>
+</div>
+
 
       <AboutUsSummary />
       <ContactUsSummary />
     </>
-  )
-}
+  );
+};
