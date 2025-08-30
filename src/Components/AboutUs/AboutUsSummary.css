@@ -1,0 +1,10 @@
+.gradient-card {
+  background: linear-gradient(
+    rgba(223, 120, 37, 0.15),
+    rgba(197, 118, 39, 0.55)
+  );
+}
+.custom-btn {
+  padding: 0.4rem 1rem; /* smaller width */
+  font-size: 0.9rem;    /* slightly smaller text */
+}

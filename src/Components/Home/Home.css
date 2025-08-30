@@ -1,0 +1,7 @@
+.gradient-card {
+  background: linear-gradient(
+    rgba(223, 120, 37, 0.15),
+    rgba(197, 118, 39, 0.55)
+  );
+  border: none;
+}

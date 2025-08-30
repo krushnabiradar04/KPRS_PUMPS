@@ -2,18 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./ContactUsSummary.css"; // 👈 css for gradient
 
 export const ContactUsSummary = () => {
   const navigate = useNavigate();
 
   const handleContact = () => {
-    navigate("/contact"); // adjust route to match your routing
+    navigate("/contact");
   };
 
   return (
     <div className="container my-5">
       <motion.div
-        className="card shadow-lg border-0 rounded-4 p-4"
+        className="card shadow-lg border-0 rounded-4 p-4 gradient-card"
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
@@ -29,7 +30,7 @@ export const ContactUsSummary = () => {
         </motion.h2>
 
         <motion.p
-          className="text-muted"
+          className="text-dark"
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -41,8 +42,8 @@ export const ContactUsSummary = () => {
         </motion.p>
 
         <motion.button
-          className="btn btn-primary px-4 py-2 mt-3 rounded-pill fw-semibold"
-          whileHover={{ scale: 1.05 }} // subtle hover effect
+          className="btn btn-primary btn-sm mt-3 rounded-pill fw-semibold custom-btn"
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleContact}
         >

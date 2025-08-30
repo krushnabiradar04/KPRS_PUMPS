@@ -97,7 +97,7 @@ export const Slider = () => {
             className={`dot ${index === current ? "active" : ""}`}
             animate={{
               scale: index === current ? 1.3 : 1,
-              backgroundColor: index === current ? "#0d6efd" : "#bbb",
+              backgroundColor: index === current ? "#e87808ff" : "#bbb",
             }}
             transition={{ duration: 0.4 }}
           />
