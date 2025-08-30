@@ -1,26 +1,82 @@
+/* Wrapper background with gradient */
 .contactus-wrapper {
-  background-color: #f8f9fa;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f0f7ff, #eaf2ff, #fdfbff);
+  border-radius: 16px;
+  padding: 2.5rem;
 }
 
+/* Gradient heading */
+.contactus-wrapper h2 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.5px;
+}
+
+/* Contact box styling */
 .contactus-box {
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
 }
 
+/* Hover effects on box */
+.contactus-box:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+  box-shadow: 0 12px 28px rgba(13, 110, 253, 0.25);
+  border: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+/* Box headings */
 .contactus-box h4 {
-  color: #333;
-  margin-bottom: 15px;
+  color: #0d6efd;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-.contactus-box a {
-  color: #007bff;
+/* Links */
+.contact-link {
+  color: #6610f2;
+  font-weight: 500;
   text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.contactus-box a:hover {
-  text-decoration: underline;
+/* Animated underline */
+.contact-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #6610f2;
+  transition: width 0.4s ease;
+}
+
+.contact-link:hover::after {
+  width: 100%;
+}
+
+.contact-link:hover {
+  color: #0d6efd;
+  text-shadow: 0 0 8px rgba(13, 110, 253, 0.7);
+}
+
+/* Subtle pulse for links */
+@keyframes pulseGlow {
+  0% { text-shadow: 0 0 5px rgba(102, 16, 242, 0.3); }
+  50% { text-shadow: 0 0 12px rgba(13, 110, 253, 0.7); }
+  100% { text-shadow: 0 0 5px rgba(102, 16, 242, 0.3); }
+}
+
+.contact-link {
+  animation: pulseGlow 3s infinite ease-in-out;
 }

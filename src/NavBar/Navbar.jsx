@@ -7,8 +7,7 @@ import kprs_logo from "../../src/assets/kprs_logo.png"
 export const Navbar = () => {
   const handleNavClick = (e) => {
     e.stopPropagation();
-    
-    // Close navbar collapse on mobile
+   
     const navbarCollapse = document.querySelector(".navbar-collapse");
     const collapseInstance = window.bootstrap.Collapse.getInstance(navbarCollapse);
     
@@ -16,7 +15,6 @@ export const Navbar = () => {
       collapseInstance.hide();
     }
     
-    // Close the parent dropdown menu
     const dropdownMenu = e.target.closest(".dropdown-menu");
     if (dropdownMenu) {
       const dropdownToggle = dropdownMenu.previousElementSibling;

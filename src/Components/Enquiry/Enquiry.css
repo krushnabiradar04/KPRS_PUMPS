@@ -1,0 +1,72 @@
+.enquiry-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.enquiry-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh; /* ensures everything fits on screen */
+  overflow-y: auto; /* scroll only if screen is too small */
+}
+
+.card-header-custom {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  border-radius: 16px 16px 0 0;
+  padding: 12px 18px;
+  color: #fff;
+  text-align: center;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 12px; /* reduced from default */
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.form-control,
+.form-select {
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+textarea.form-control {
+  min-height: 60px; /* smaller textareas */
+  resize: vertical;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  color: #fff;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.success-message {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #16a34a;
+  text-align: center;
+  margin: 20px 0;
+}
