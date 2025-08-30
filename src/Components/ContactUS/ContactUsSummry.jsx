@@ -21,7 +21,7 @@ export const ContactUsSummary = () => {
         whileHover={{ scale: 1.03, boxShadow: "0px 12px 25px rgba(0,0,0,0.15)" }}
       >
         <motion.h2
-          className="mb-3 fw-bold text-primary"
+          className="mb-3 fw-bold "
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -42,7 +42,7 @@ export const ContactUsSummary = () => {
         </motion.p>
 
         <motion.button
-          className="btn btn-primary btn-sm mt-3 rounded-pill fw-semibold custom-btn"
+          className="btn  btn-sm mt-3 rounded-pill fw-semibold custom-btn"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleContact}

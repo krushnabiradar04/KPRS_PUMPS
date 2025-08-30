@@ -32,10 +32,10 @@
 
 .slider-title {
   position: absolute;
-  bottom: 8%;
-  left: 50%;
+  bottom: -1%;
+  left: 5%;
   transform: translateX(-50%);
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   letter-spacing: 2px;
   z-index: 3;
   text-align: center;
@@ -72,7 +72,7 @@
 @media (max-width: 992px) {
   .slider-title {
     font-size: 1.8rem;
-    bottom: 10%;
+    bottom: 5%;
   }
 }
 
@@ -85,7 +85,7 @@
 
   .slider-title {
     font-size: 1.4rem;
-    bottom: 12%;
+    bottom: 5%;
     letter-spacing: 1px;
   }
 

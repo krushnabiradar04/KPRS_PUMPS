@@ -53,7 +53,7 @@ export const Slider = () => {
     <div className="slider-container position-relative overflow-hidden">
     {/* Product Name */}
       <AnimatePresence mode="wait">
-        <motion.h1
+        <motion.h3
   key={productNames[current]}
   className="slider-title text-uppercase fw-bold text-white text-center"
   initial={{ y: -40, opacity: 0 }}  // 🔼 animate from top now
@@ -62,7 +62,7 @@ export const Slider = () => {
   transition={{ duration: 0.8, ease: "easeInOut" }}
 >
   {productNames[current]}
-</motion.h1>
+</motion.h3>
 
       </AnimatePresence>
       {/* Image */}
